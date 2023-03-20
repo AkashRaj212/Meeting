@@ -1,0 +1,24 @@
+*{
+	margin:0px;
+	padding:0px;
+	
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to 100% of the viewport height */
+  background-color: rgba(244, 91, 105, 1);
+}
+
+h1 {
+  text-align: center;
+  color:white;
+}
+
+button {
+  display: block; /* Make the button a block element to center it */
+  margin-top: 20px; /* Add some spacing between the heading and button */
+ padding:5px;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+<script src="https://kit.fontawesome.com/d1079c438e.js" crossorigin="anonymous"></script>
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+  </script>
+   <link href="style.css" rel="stylesheet" type="text/css" />
+   <link href="join.css" rel="stylesheet" type="text/css" />
+   <link href="chat.css" rel="stylesheet/css" type="text/css" />
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="userOptions.js" defer></script>
+  <script src="chatGpt.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+<body id="body"><div id="whole_container">
+  <div id="head">
+    <div id="video-container"></div>
+    </div>
+
+<div id="content">
+  
+  <div id="main-content">
+    
+
+    
+</div> 
+
+<div id="chat_box" >
+  <div id="chat_head">
+    <div>
+      <span onclick="chatAccess()" class="material-symbols-outlined" id="chat_box_close_icon">
+        expand_more
+      </span>
+    </div>
+  <div id="chat_heading">
+    <h3>Meeting chat</h3>
+  </div>
+    
+  </div>
+  <div id="chat_area">
+
+
+    <div class="responsive-html5-chat">
+    </div>
+
+
+
+  </div>
+  <div id="input_area">
+    <textarea type="text" id="Inputmessage" placeholder="enter chat"></textarea>
+
+   
+    <span  id="send_chat" onclick="send_message()" class="material-symbols-outlined">
+      send
+      </span>
+  </div>
+</div>
+<div id="chatGpt" >
+  <div id="chat_head">
+    <div>
+      <span onclick="chatGpt()" class="material-symbols-outlined" id="chat_box_close_icon">
+        expand_more
+      </span>
+    </div>
+  <div id="chat_heading">
+    <h3>Clear your doubts</h3>
+  </div>
+    
+  </div>
+  <div id="chat_area">
+
+  <div id="chatgpt">
+
+  </div>
+
+
+
+
+  </div>
+  <div id="input_area">
+    <textarea type="text" id="InputmessageforchatGpt" placeholder="enter chat"></textarea>
+
+   
+    <span  id="send_chat" onclick="sendToChatGpt()" class="material-symbols-outlined">
+      send
+      </span>
+  </div>
+</div>
+
+<div id="participantsList">
+  <div id="participantsHeader">
+    <div style="width:20px;height:100%;padding-top:10px;"><span onclick="participantsListAccess()" class="material-symbols-outlined" id="chat_box_close_icon">
+      expand_more
+    </span></div>
+    <div style="width:100%;Height:100%;padding-top:10px;text-align: center;">
+        Participants
+    </div>
+    </div>
+  
+  <div id="participant-list">
+  </div>
+</div>
+
+
+  </div>
+
+  <div id="footer">
+    
+  <div id="userAccess">
+    <div>
+    <i class="fa-solid fa-video-slash" id="videoAccess" onclick="videoAccess(this)"></i>
+    <p id="videoPtag" >start video</p>
+  </div>
+  <div>
+    <i class="fa-solid fa-microphone-slash" id="audioAccess" onclick="audioAccess(this)"></i>
+    <p id="microphonePtag">unmute</p>
+  </div>
+ 
+  </div>
+  <div id="userOptions">
+   <div>
+    <span class="material-symbols-outlined" onclick="participantsListAccess()">
+      group
+      </span>
+    </div>
+    <span class="material-symbols-outlined" onclick="chatAccess()">
+      chat
+      </span>
+      <span class="material-symbols-outlined" onclick="screenshare()">
+        present_to_all
+        </span>
+      <span class="material-symbols-outlined" onclick="chatGpt()">
+help
+</span>
+    <span class="material-symbols-outlined">
+      add_reaction
+      </span>
+      <span id="record_button" class="material-symbols-outlined" onclick="record(this)">
+        radio_button_unchecked
+        </span>
+  </div>
+  <div id="exitOptions">
+    <button id="leaveMeeting" onclick="leave()">Leave Meeting</button>
+  </div>
+  </div>
+  <script src="chat.js"></script>
+  <script src="participants.js"></script>
+  <script src="screenshare.js"></script>
+</div>
+
+<div id="name_div">
+  
+   
+
+    <div class="login">
+      <input type="text" placeholder="Username" id="username">
+      <!-- <input type="password" placeholder="Password"> -->
+      <button onclick="userIn()">Join</button>
+    </div>
+    
+ 
+</div>
+</body>
+</html>
